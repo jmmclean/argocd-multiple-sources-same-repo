@@ -1,0 +1,11 @@
+apiVersion: v2
+name: reloader
+version: 0.1.0
+appVersion: 0.1.0
+description: Reloader is a tool that reloads the application when the code changes.
+
+dependencies:
+  - name: reloader
+    alias: umbrella-reloader
+    version: 2.2.7
+    repository: https://stakater.github.io/stakater-charts

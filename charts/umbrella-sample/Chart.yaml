@@ -1,0 +1,11 @@
+# This chart will not resolve, however it is meant to show an umbrella chart pattern implementation
+apiVersion: v2
+name: umbrella-sample
+version: 0.1.0
+appVersion: 0.1.0
+description: Umbrella sample is a sample application that uses the umbrella pattern.
+
+dependencies:
+  - name: some-upstream-dependency
+    version: 0.1.0
+    repository: https://jmmclean.github.io/jmmclean-charts

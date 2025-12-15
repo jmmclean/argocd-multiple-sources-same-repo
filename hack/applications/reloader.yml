@@ -1,0 +1,23 @@
+kind: Application
+apiVersion: argoproj.io/v1alpha1
+metadata:
+  name: reloader
+  namespace: argocd
+spec:
+  project: default
+  sources:
+    # point in time reference to the helm umbrella chart
+    - helm:
+        releaseName: reloader
+        valueFiles:
+          - $selfRef/charts/reloader/values-dev.yaml
+      path: charts/reloader
+      repoURL: https://github.com/jmmclean/argocd-multiple-sources-same-repo.git
+      targetRevision: reloader-v0.1.0
+    # always take main for most recent declarative values
+    - ref: selfRef
+      repoURL: https://github.com/jmmclean/argocd-multiple-sources-same-repo.git
+      targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default

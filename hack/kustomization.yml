@@ -1,0 +1,5 @@
+resources:
+  - repository.yml
+  - applications/reloader.yml
+
+namespace: argocd
