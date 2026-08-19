@@ -8,4 +8,4 @@ umbrella-reloader:
           cpu: "50m"
           memory: "256Mi"
       labels:
-        environment: dev
+        environment: dev2
